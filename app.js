@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-//cargar archivos de rutas
+//load file routes
 var bier_routes = require('./routes/bier');
 
 //Middlewares
@@ -23,24 +23,9 @@ app.use((req, res, next) => {
 });
 
 
-//rutas
+//routes
 app.use('/api',bier_routes);
 
-/*app.get('/test',(req,res) => {
-	res.status(200).send({message:"Hi welt from my backend"
-});
 
-});
-
-app.get('/',(req,res)=>{
-	res.status(200).send("Hola Ceporro");
-});
-
-app.post('/datos/:id',(req,res)=>{
-	console.log(req.body.nombre);
-	console.log(req.query.web);
-	console.log(req.params.id);
-});*/
-
-//exportar 
+//export
 module.exports = app;
