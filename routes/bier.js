@@ -5,9 +5,8 @@ var BierController = require ('../controllers/bier');
 
 var router = express.Router();
 
-/*esta variable y la otra se necesitan para cargar archivos,despues
-hay que crear una carpeta en el proyecto,despues hay que 
-incluirlo como parametro en el router.post*/
+/*this variable and the other,are needed to upload files.After
+a new folder should be created and include it as parameter in the router post*/
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart({ uploadDir: './uploads'});
 
