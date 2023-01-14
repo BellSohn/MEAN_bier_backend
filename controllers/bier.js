@@ -2,7 +2,7 @@
 
 var Bier = require('../models/bier');
 var fs = require('fs');
-var path = require('path'); /*este modulo,nos permite cargar rutas físicas*/
+var path = require('path'); /*this module allow me to load phisic routes*/
 
 var controller = {
 
@@ -58,10 +58,9 @@ var controller = {
 	},
 
 	getBiers:function(req,res){
-
-		/*en find podemos incluir cliterios de busqueda,si no metemos nada
-		nos va a devolver todos los registros de Mongo,tambien podemos usar find({}).sort('year')
-		por ejemplo*/
+		
+		/*with find we can include search criteria.if left blank return all mongo data.We can use also find({}).sort('year') */
+		
 		Bier.find({}).exec((err,biers)=>{
 			if(err) return res.status(500).send({message:'error al devolver los datos'});
 
@@ -94,16 +93,16 @@ var controller = {
 
 		var bierid = req.params.id;
 
-	Bier.findByIdAndRemove(bierid,(err,bierRemoved)=>{
+		Bier.findByIdAndRemove(bierid,(err,bierRemoved)=>{
 
-	if(err) return res.status(500).send({message:'No se pudo borrar el registro'});
-	if(!bierRemoved) return res.status(404).send({message:'No se puede borrar el registro'});
+		if(err) return res.status(500).send({message:'No se pudo borrar el registro'});
+		if(!bierRemoved) return res.status(404).send({message:'No se puede borrar el registro'});
 
-	return res.status(200).send({
-			bier:bierRemoved
+			return res.status(200).send({
+				bier:bierRemoved
+			});
+
 		});
-
-	});
 
 	},
 
@@ -132,19 +131,16 @@ var controller = {
 		});
 
 	}else{
-				fs.unlink(filePath,err =>{
-					return res.status(200).send({message:'La extension no es valida'});
-				});
+		fs.unlink(filePath,err =>{
+			return res.status(200).send({message:'La extension no es valida'});
+		});
 
-	}
-
-			
-
-			
-		}else{
-			return res.status(200).send({
-				message:fileName
-			});
+	}			
+				
+	}else{
+		return res.status(200).send({
+			message:fileName
+		});
 		}
 	},
 
