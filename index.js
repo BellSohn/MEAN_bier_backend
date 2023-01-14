@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 var app = require('./app');
-var port = 3700; /*este es el puerto de mi servidor*/
+var port = 3700; /*this is my server port*/
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/bierwelt')
