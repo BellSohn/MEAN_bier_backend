@@ -10,8 +10,8 @@ var bier_routes = require('./routes/bier');
 
 //Middlewares
 
-app.use(bodyParser.urlencoded({extended:false})); //configuracion necesaria para bodyParser
-app.use(bodyParser.json()); //con esto convertimos cualquier tipo de peticion a JSON
+app.use(bodyParser.urlencoded({extended:false})); //necesary configuration to bodyParser
+app.use(bodyParser.json()); //with this,we change any type of request to JSON data
 
 //CORS
 app.use((req, res, next) => {
