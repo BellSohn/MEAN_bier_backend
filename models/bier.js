@@ -15,8 +15,7 @@ var BierSchema = Schema({
 });
 
 module.exports = mongoose.model('Bier',BierSchema);
-/*moongose, cambia el primer parámetro de model,a 
-minuscula y plural, asi que Bier cambia a biers*/
+/*moongose change the first parameter of the model to lowercase and plural,so Biers turn into biers*/
 
 
 
